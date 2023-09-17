@@ -1,0 +1,23 @@
+{
+ "id" : 1568,
+ "name" : "Ram Kumar",
+ "menuItem": [
+ 	{
+ 		"value": "new",
+    	"onClick": "createnewdoc"
+ 	},
+ 	{
+ 		"value": "new",
+ 		"onClick": "create new file"
+ 	}
+ ],
+ "Address": 
+ 	{
+ 		"house number": "2335",
+ 		"street name": "Thendral street",
+ 		"area name": "Villapuram Housing Board",
+ 		"City": "Madurai",
+ 		"State": "Tamil Nadu"
+ 	}
+ 
+}
