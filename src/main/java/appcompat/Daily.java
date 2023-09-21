@@ -10,12 +10,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Daily {
 	
 	public int n;
 	WebDriver driver;
-
+	public String url1 = "https://www.ebay.com/";
+	public String url = "https://testtracker.googleplex.com/efforts/testplans/1597079"; 
+	
 	public void invokeBrowser() throws Exception {
 		System.out.println("Choose the Browser");
 		System.out.println("1.Chrome");
@@ -43,7 +46,7 @@ public class Daily {
 	}
 	
 	public void navigateToUrl() {
-		driver.get("https://testtracker.googleplex.com/efforts/testplans/1593422");
+		driver.get(url);
 	}
 	
 	public void search() {
@@ -67,7 +70,19 @@ public class Daily {
 				}
 		}
 		catch(Exception e ) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void clickLink() {
+		try {
+			WebElement link;
+			link = driver.findElement(By.xpath("(//td[@class='tooltipped'])[1]"));
+			link.click();
 			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 	
@@ -76,7 +91,8 @@ public class Daily {
 		Daily daily = new Daily();
 		daily.invokeBrowser();
 		daily.navigateToUrl();
-		daily.getBugDetails();
+		//daily.getBugDetails();
+		daily.clickLink();
 		//daily.search();
 	}
 
